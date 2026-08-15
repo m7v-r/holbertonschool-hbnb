@@ -2,7 +2,7 @@ Flask
 Flask-Bcrypt
 Flask-JWT-Extended
 flask-sqlalchemy
-flast_restx
+flask_restx
 sqlalchemy
 PyMySQL
 gunicorn
