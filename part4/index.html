@@ -7,22 +7,44 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+
     <header>
+        <a href="index.html">
+            <img src="images/logo.png" alt="HBnB Logo" class="logo">
+        </a>
         <nav>
-            <a href="login.html" id="login-link">Login</a>
+            <a href="index.html">Home</a>
+            <a href="login.html" id="login-link" class="login-button">Login</a>
         </nav>
     </header>
+
     <main>
+        <h1> Available Places</h1>
         <section id="filter">
             <label for="price-filter">Max Price:</label>
             <select id="price-filter">
-                <!-- Options will be populated dynamically -->
             </select>
         </section>
+
         <section id="places-list">
-            <!-- List of places will be populated dynamically -->
+            <div class="place-card">
+                <h2>Cozy Studio</h2>
+                <p>Price per night: $150</p>
+                <button class="details-button">View Details</button>
+            </div>
+
+            <div class="place-card">
+                <h2>Desert Villa</h2>
+                <p>Price per night: $300</p>
+                <button class="details-button">View Details</button>
+            </div>
         </section>
     </main>
+
+    <footer>
+        <p>&copy; 2026 HBnB. All rights reserved.</p>
+    </footer>
+
     <script src="scripts.js"></script>
 </body>
 </html>
