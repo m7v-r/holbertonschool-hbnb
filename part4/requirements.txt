@@ -1,8 +1,0 @@
-Flask
-Flask-Bcrypt
-Flask-JWT-Extended
-flask-sqlalchemy
-flask_restx
-sqlalchemy
-PyMySQL
-gunicorn
