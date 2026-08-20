@@ -1,4 +1,5 @@
 from flask import Flask
+from flask_cors import CORS
 from flask_bcrypt import Bcrypt
 from flask_jwt_extended import JWTManager
 from flask_sqlalchemy import SQLAlchemy
@@ -12,6 +13,12 @@ jwt = JWTManager()
 def create_app(config_name="default"):
     app = Flask(__name__)
     app.config.from_object(config[config_name])
+
+    CORS(app, resources={
+        r"/api/*": {
+            "origins": "*"
+        }
+    })
 
     db.init_app(app)
     bcrypt.init_app(app)

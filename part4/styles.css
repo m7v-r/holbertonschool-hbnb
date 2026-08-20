@@ -1,0 +1,121 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f7f7f7;
+    color: #222;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background: white;
+    border-bottom: 1px solid #ddd;
+}
+
+.logo {
+    width: 100px;
+}
+
+nav a {
+    margin-left: 15px;
+    text-decoration: none;
+}
+
+main {
+    padding: 20px;
+    min-height: 70vh;
+}
+
+#filter {
+    margin-bottom: 20px;
+}
+
+#places-list {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.place-card,
+.review-card {
+    margin: 20px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    background: white;
+}
+
+.place-card {
+    width: 250px;
+}
+
+.details-button {
+    display: inline-block;
+    padding: 8px 12px;
+    margin-top: 10px;
+    text-decoration: none;
+    border-radius: 5px;
+    background: #eee;
+}
+
+.place-details,
+.form,
+.add-review {
+    max-width: 700px;
+    margin: 30px auto;
+    padding: 20px;
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+}
+
+.place-info {
+    padding: 10px;
+}
+
+.review-card {
+    margin-top: 15px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+input,
+textarea,
+select,
+button {
+    padding: 10px;
+}
+
+textarea {
+    min-height: 150px;
+    resize: vertical;
+}
+
+button {
+    cursor: pointer;
+}
+
+.error {
+    color: #b00020;
+}
+
+#add-review {
+    text-align: center;
+    margin: 20px;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    margin-top: 30px;
+    background: white;
+}
