@@ -156,6 +156,14 @@ footer {
     font-size: 16px;
 }
 
+#error-message {
+    color: #d9534f;
+    text-align: center;
+    margin-bottom: 15px;
+    font-weight: bold;
+    font-size: 14px;
+}
+
 #login-form input:focus {
     border-color: #ff9800;
     outline: none;
