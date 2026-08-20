@@ -3,6 +3,23 @@ from app.models.base import BaseModel
 from sqlalchemy.orm import validates
 
 
+place_amenities = db.Table(
+    "place_amenities",
+    db.Column(
+        "place_id",
+        db.String(36),
+        db.ForeignKey("places.id"),
+        primary_key=True,
+    ),
+    db.Column(
+        "amenity_id",
+        db.String(36),
+        db.ForeignKey("amenities.id"),
+        primary_key=True,
+    ),
+)
+
+
 class Place(BaseModel):
     __tablename__ = "places"
 
@@ -12,13 +29,47 @@ class Place(BaseModel):
     latitude = db.Column(db.Float, nullable=False)
     longitude = db.Column(db.Float, nullable=False)
 
-    def __init__(self, title, price, latitude, longitude, description=None, **kwargs):
+    owner_id = db.Column(
+        db.String(36),
+        db.ForeignKey("users.id"),
+        nullable=False,
+    )
+
+    owner = db.relationship(
+        "User",
+        back_populates="places",
+    )
+
+    amenities = db.relationship(
+        "Amenity",
+        secondary=place_amenities,
+        back_populates="places",
+    )
+
+    reviews = db.relationship(
+        "Review",
+        back_populates="place",
+        cascade="all, delete-orphan",
+    )
+
+    def __init__(
+        self,
+        title,
+        price,
+        latitude,
+        longitude,
+        description=None,
+        owner_id=None,
+        **kwargs
+    ):
         super().__init__(**kwargs)
+
         self.title = title
         self.description = description
         self.price = price
         self.latitude = latitude
         self.longitude = longitude
+        self.owner_id = owner_id
 
     @validates("title")
     def validate_title(self, key, title):
@@ -52,6 +103,21 @@ class Place(BaseModel):
             "price": self.price,
             "latitude": self.latitude,
             "longitude": self.longitude,
-            "created_at": self.created_at.isoformat() if self.created_at else None,
-            "updated_at": self.updated_at.isoformat() if self.updated_at else None,
+            "owner_id": self.owner_id,
+            "amenities": [
+                amenity.id for amenity in self.amenities
+            ],
+            "reviews": [
+                review.to_dict() for review in self.reviews
+            ],
+            "created_at": (
+                self.created_at.isoformat()
+                if self.created_at
+                else None
+            ),
+            "updated_at": (
+                self.updated_at.isoformat()
+                if self.updated_at
+                else None
+            ),
         }

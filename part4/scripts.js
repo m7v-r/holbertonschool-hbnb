@@ -187,9 +187,9 @@ async function fetchPlaceDetails(token, placeId) {
     }
 
     const place = await response.json();
-    displayPlaceDetails(place);
 
-    await fetchPlaceReviews(placeId, token);
+    displayPlaceDetails(place);
+    displayReviews(place.reviews || []);
 }
 
 function displayPlaceDetails(place) {
@@ -224,19 +224,6 @@ function displayPlaceDetails(place) {
             </ul>
         </div>
     `;
-}
-
-async function fetchPlaceReviews(placeId, token) {
-    const response = await fetch(
-        `${API_URL}/places/${encodeURIComponent(placeId)}/reviews`
-    );
-
-    if (!response.ok) {
-        throw new Error("Failed to fetch reviews");
-    }
-
-    const reviews = await response.json();
-    displayReviews(reviews);
 }
 
 function displayReviews(reviews) {
