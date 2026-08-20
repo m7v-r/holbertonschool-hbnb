@@ -1,9 +1,4 @@
-/* 
-  This is a SAMPLE File to get you started. Follow the instructions on the project to complete the tasks. 
-  You'll probably need to override some of theese styles.
-*/
-
-* {
+*, ::before, ::after {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
@@ -12,21 +7,256 @@
 
 body {
     background-color: #f4f4f4;
-    color: #333;
+    color: #000;
+    display: flex;
+    flex-direction: column;
+    min-height: 100dvh;
 }
 
 header {
-    background-color: #333;
-    color: #fff;
-    padding: 1rem;
+    background-color: #ff9800;
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    height: 40px;
 }
 
 nav a {
     color: #fff;
     text-decoration: none;
-    margin-left: 1rem;
+    font-size: 16px;
+    margin: 12px;
 }
 
 main {
     padding: 2rem;
+    flex: 1;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 28px;
+}
+
+#filter {
+    text-align: center;
+    margin-bottom: 40px;
+    font-weight: bold;
+}
+
+#filter select {
+    padding: 5px;
+    margin-left: 5px;
+    font-size: 14px;
+}
+
+#places-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.place-card {
+    margin: 20px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    background-color: #fff;
+    width: 320px;
+    box-shadow: 0 4px 8px #0000000d;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.place-card h2 {
+    font-size: 22px;
+    margin: 15px 0 10px 0;
+}
+
+.place-card p {
+    margin-bottom: 25px;
+    font-size: 16px;
+}
+
+.details-button,
+#login-form button,
+#review-form button {
+    background-color: #ff9800;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none;
+    display: inline-block;
+    transition: background-color 0.2s;
+}
+
+#login-form button,
+#review-form button {
+    width: 100%;
+    padding: 12px;
+}
+
+.details-button {
+    margin-bottom: 15px;
+}
+
+.details-button:hover,
+#login-form button:hover,
+#review-form button:hover {
+    background-color: #e68a00;
+}
+
+footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: #ff9800;
+    color: #000000;
+}
+
+#login-form {
+    background-color: #fff;
+    max-width: 400px;
+    margin: 40px auto;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px #0000000d;
+}
+
+#login-form h2 {
+    text-align: center;
+    margin-bottom: 25px;
+    color: #333;
+}
+
+#login-form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #333;
+}
+
+#login-form input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+#login-form input:focus {
+    border-color: #ff9800;
+    outline: none;
+    box-shadow: 0 0 5px #ff98004d;
+}
+
+#review-form {
+    background-color: #fff;
+    max-width: 400px;
+    margin: 40px auto;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px #0000000d;
+}
+
+#review-form h2 {
+    text-align: center;
+    margin-bottom: 25px;
+    color: #333;
+}
+
+#review-form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #333;
+}
+
+#review-form select,
+#review-form textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+    font-family: Arial, sans-serif;
+    resize: vertical;
+}
+
+#review-form select:focus,
+#review-form textarea:focus {
+    border-color: #ff9800;
+    outline: none;
+    box-shadow: 0 0 5px #ff98004d;
+}
+
+.place-details {
+    background-color: #fff;
+    max-width: 800px;
+    margin: 0 auto 40px auto;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px #0000000d;
+}
+
+.place-info p {
+    margin-bottom: 15px;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.reviews h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 40px;
+}
+
+#reviews-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 1800px;
+    margin: 0 auto;
+}
+
+.review-card {
+    margin: 20px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    background-color: #fff;
+    width: 500px;
+    box-shadow: 0 4px 8px #0000000d;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.review-card h3 {
+    font-size: 18px;
+    margin: 10px 0px 10px 0px;
+}
+
+.review-card p {
+    margin-bottom: 8px;
+}
+
+.add-review-container {
+    text-align: center;
+    margin-top: 30px;
 }

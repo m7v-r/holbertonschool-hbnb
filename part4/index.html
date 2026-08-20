@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,39 +8,47 @@
 </head>
 <body>
 
+    <!-- Header -->
     <header>
+        <!-- Logo -->
         <a href="index.html">
             <img src="images/logo.png" alt="HBnB Logo" class="logo">
         </a>
+        <!-- Nav bar -->
         <nav>
             <a href="index.html">Home</a>
             <a href="login.html" id="login-link" class="login-button">Login</a>
         </nav>
     </header>
 
+    <!-- Main -->
     <main>
-        <h1> Available Places</h1>
+        <!-- Main Header -->
+        <h1>Available Places</h1>
         <section id="filter">
             <label for="price-filter">Max Price:</label>
             <select id="price-filter">
             </select>
         </section>
 
+        <!-- Places list -->
         <section id="places-list">
+            <!-- Place cards -->
             <div class="place-card">
-                <h2>Cozy Studio</h2>
-                <p>Price per night: $150</p>
+                <h2>Apartment</h2>
+                <p>Price per night: $50</p>
                 <button class="details-button">View Details</button>
             </div>
 
             <div class="place-card">
-                <h2>Desert Villa</h2>
-                <p>Price per night: $300</p>
+                <h2>Hotel Room</h2>
+                <p>Price per night: $100</p>
                 <button class="details-button">View Details</button>
             </div>
         </section>
     </main>
 
+    <!-- Footer -->
     <footer>
         <p>&copy; 2026 HBnB. All rights reserved.</p>
     </footer>

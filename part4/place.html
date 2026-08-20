@@ -7,23 +7,56 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+
+    <header>
+        <a href="index.html">
+            <img src="images/logo.png" alt="HBnB Logo" class="logo">
+        </a>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="login.html" class="login-button">Login</a>
+        </nav>
+    </header>
+
     <main>
-        <section id="place-details">
-            <!-- Place details will be populated dynamically -->
+        <section class="place-details">
+            <h1>Cozy Cabin</h1>
+
+            <div class="place-info">
+                <p><strong>Host:</strong> Basem</p>
+                <p><strong>Price per night:</strong> $100</p>
+                <p><strong>Description:</strong> A beautiful and cozy cabin in the woods, perfect for a weekend getaway away from the city.</p>
+                <p><strong>Amenities:</strong> WiFi, Kitchen, Heating, Free Parking</p>
+            </div>
         </section>
-        <section id="reviews">
-            <!-- Reviews will be populated dynamically -->
-        </section>
-        <section id="add-review">
-            <h2>Add a Review</h2>
-            <form id="review-form">
-                <label for="review-text">Review:</label>
-                <textarea id="review-text" name="review-text" required></textarea>
-                
-                <button type="submit">Submit</button>
-            </form>
+
+        <section class="reviews">
+            <h2>Reviews</h2>
+
+            <div id="reviews-list">
+                <article class="review-card">
+                    <h3>Alice Inchains</h3>
+                    <p><strong>Rating:</strong> ⭐⭐⭐⭐⭐</p>
+                    <p>"Amazing stay! Highly recommended."</p>
+                </article>
+
+                <article class="review-card">
+                    <h3>Bob Builder</h3>
+                    <p><strong>Rating:</strong> ⭐⭐⭐⭐</p>
+                    <p>"Nice place, but a bit cold at night."</p>
+                </article>
+            </div>
+
+            <div class="add-review-container">
+                <a href="add_review.html" class="details-button">Add a Review</a>
+            </div>
         </section>
     </main>
+
+    <footer>
+        <p>&copy; 2026 HBnB. All rights reserved.</p>
+    </footer>
+
     <script src="scripts.js"></script>
 </body>
 </html>
